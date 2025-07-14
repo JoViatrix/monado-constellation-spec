@@ -1,0 +1,37 @@
+name: Update Spec with Latest Monado Commit
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Every day at 0:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-spec:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout this repository
+        uses: actions/checkout@v4
+
+      - name: Fetch latest commit from monado repo
+        id: monado
+        run: |
+          latest_commit=$(git ls-remote https://gitlab.freedesktop.org/thaytan/monado.git HEAD | cut -f1)
+          short_commit=${latest_commit:0:7}
+          echo "commit=$short_commit" >> "$GITHUB_OUTPUT"
+
+      - name: Update Version field in spec file
+        run: |
+          sed -i -E "s/^(Version:\s*).*/\1${{ steps.monado.outputs.commit }}/" *.spec
+          echo "Updated spec file:"
+          grep Version: *.spec
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git commit -am "Update spec Version to monado commit ${{ steps.monado.outputs.commit }}"
+          git push

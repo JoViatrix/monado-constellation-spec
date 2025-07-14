@@ -1,11 +1,11 @@
-Name: monado
+Name: monado-constellation
 Version: 1d37e1d
 Release: %autorelease
 Summary: Monado - XR Runtime (XRT)
 
 License: bsl-1.0
-URL: https://monado.freedesktop.org/
-Source0: https://gitlab.freedesktop.org/monado/monado/-/archive/%{version}/monado-%{version}.tar.gz
+URL: https://gitlab.freedesktop.org/thaytan/monado.git
+Source0: https://gitlab.freedesktop.org/thaytan/monado/-/archive/%{version}/monado-%{version}.tar.gz
 
 BuildRequires: cmake >= 3.13
 BuildRequires: gcc-c++
