@@ -1,5 +1,5 @@
 Name: monado-constellation
-Version: 1d37e1d
+Version: 4671669
 Release: %autorelease
 Summary: Monado - XR Runtime (XRT)
 
