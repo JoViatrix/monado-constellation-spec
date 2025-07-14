@@ -1,7 +1,7 @@
 Name: monado-constellation
 Version: 1d37e1d
 Release: %autorelease
-Summary: Monado - XR Runtime (XRT)
+Summary: Monado - XR Runtime (XRT) with WMR & Rift S controller tracking
 
 License: bsl-1.0
 URL: https://gitlab.freedesktop.org/thaytan/monado.git
@@ -45,6 +45,8 @@ BuildRequires: libbsd-devel
 Requires: opencv-videoio >= 4.11.0
 Requires: basalt-monado
 
+Conflicts: monado
+
 %description
 Monado is an open source XR runtime delivering immersive experiences such as VR
 and AR on on mobile, PC/desktop, and any other device
@@ -53,9 +55,10 @@ Monado aims to be a complete and conforming implementation of the OpenXR API mad
 The project currently is being developed for GNU/Linux and aims to support other operating
 systems in the near future.
 "Monado" has no specific meaning and is just a name.
+This version enables positional tracking for WMR controllers in full 6dof. Includes Rift S support & controllers.
 
 %prep
-%autosetup -n %{name}-%{version}
+%autosetup -n monado-%{version}
 
 %build
 %cmake -DBUILD_DOC:BOOL=OFF
