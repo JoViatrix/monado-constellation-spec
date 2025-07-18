@@ -1,5 +1,5 @@
 Name: monado-constellation
-Version: 4671669
+Version: 09ddc28
 Release: %autorelease
 Summary: Monado - XR Runtime (XRT) with WMR & Rift S controller tracking
 
