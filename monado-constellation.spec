@@ -1,11 +1,14 @@
+%global commit 4235555
+%global datetimever 202507181445%{commit}
+
 Name: monado-constellation
-Version: 4671669
-Release: %autorelease
+Version: %{datetimever}
+Release: %autorelease.1
 Summary: Monado - XR Runtime (XRT) with WMR & Rift S controller tracking
 
 License: bsl-1.0
 URL: https://gitlab.freedesktop.org/thaytan/monado.git
-Source0: https://gitlab.freedesktop.org/thaytan/monado/-/archive/%{version}/monado-%{version}.tar.gz
+Source0: https://gitlab.freedesktop.org/thaytan/monado/-/archive/%{commit}/monado-%{commit}.tar.gz
 
 BuildRequires: cmake >= 3.13
 BuildRequires: gcc-c++
@@ -58,7 +61,7 @@ systems in the near future.
 This version enables positional tracking for WMR controllers in full 6dof. Includes Rift S support & controllers.
 
 %prep
-%autosetup -n monado-%{version}
+%autosetup -n monado-%{commit}
 
 %build
 %cmake -DBUILD_DOC:BOOL=OFF
