@@ -1,8 +1,8 @@
-%global commit b1c850a
-%global datetimever 202609120246b1c850a
+%global commit 
+%global datetimever 202610190256
 
 Name: monado-constellation
-Version: 202609120246b1c850a
+Version: 202610190256
 Release: 1%{?dist}
 Summary: Monado - XR Runtime (XRT) with WMR & Rift S controller tracking
 
@@ -100,6 +100,9 @@ This version enables positional tracking for WMR controllers in full 6dof. Inclu
 
 
 %changelog
+* Mon Oct 19 2026 GitHub Actions <actions@github.com>
+- Auto-update to Monado commit
+
 * Sat Sep 12 2026 GitHub Actions <actions@github.com> - 202609120246b1c850a-1
 - Auto-update to Monado commit b1c850a
 
